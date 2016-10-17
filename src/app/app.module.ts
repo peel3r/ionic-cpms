@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {Game,TournamentsPage,MyTeamsPage,TeamDetail, Teams} from "../pages/pages";
+// import {enableProdMode} from "@angular/core";
 
-
+// enableProdMode()
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {Game,TournamentsPage,MyTeamsPage,TeamDetail, Teams} from "../pages/pages
   imports: [
     IonicModule.forRoot(MyApp)
   ],
+
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
