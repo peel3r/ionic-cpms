@@ -12,7 +12,7 @@ import {Game,TournamentsPage,MyTeamsPage,TeamDetail, Teams} from "../pages/pages
     MyTeamsPage,
     TeamDetail,
     Teams,
-    TournamentsPage
+    TournamentsPage,
 
   ],
   imports: [

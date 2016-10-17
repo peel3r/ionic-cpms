@@ -4,7 +4,7 @@ import {TournamentsPage} from "../pages";
 
 
 @Component({
-  selector: 'my-teams-page',
+  selector: 'page-my-teams',
   templateUrl: './my-teams.page.html'
 })
 
