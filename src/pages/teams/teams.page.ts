@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { TeamHomePage } from '../pages';
+import { TeamHome } from '../pages';
 
 @Component({
-  templateUrl: 'build/pages/teams/teams.page.html',
+  templateUrl: 'teams.page.html',
 })
-export class TeamsPage {
+export class Teams {
 
   teams = [
     { id: 1, name: 'HC Elite' },
@@ -19,6 +19,6 @@ export class TeamsPage {
   }
 
   itemTapped($event, team){
-    this.nav.push(TeamHomePage, team); 
+    this.nav.push(TeamHome, team);
   }
 }

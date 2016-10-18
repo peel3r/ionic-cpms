@@ -16,6 +16,7 @@ export class TeamDetail {
   team: any
   constructor(public navCtrl: NavController, private navParams: NavParams) {
     this.team = this.navParams.data;
+    console.log(this.team)
   }
 
   ionViewDidLoad() {

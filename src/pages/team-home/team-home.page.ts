@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { MyTeamsPage, StandingsPage, TeamDetailPage } from '../pages';
+import { MyTeamsPage, Standings, TeamDetail } from '../pages';
 
 @Component({
-  templateUrl: 'build/pages/team-home/team-home.page.html',
+  templateUrl: 'team-home.page.html',
 })
-export class TeamHomePage {
+export class TeamHome {
   team: any;
-  teamDetailTab = TeamDetailPage;
-  standingsTab = StandingsPage;
+  teamDetailTab = TeamDetail;
+  standingsTab = Standings;
 
   constructor(private nav: NavController, private navParams: NavParams) {
-    this.team =  this.navParams.data; 
+    this.team =  this.navParams.data;
   }
 
   goHome(){
