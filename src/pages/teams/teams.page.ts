@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {TeamDetail} from "../pages";
 
 @Component({
   selector: 'page-teams',
@@ -13,4 +14,7 @@ export class Teams {
     console.log('Hello Teams Page');
   }
 
+  itemTapped() {
+    this.navCtrl.push(TeamDetail)
+  }
 }
