@@ -8,13 +8,19 @@ import {TeamDetail} from "../pages";
 })
 export class Teams {
 
+  teams = [
+    {id: 1, name: 'goblins'},
+    {id: 2, name: 'trolls'},
+    {id: 3, name: 'orks'}
+  ];
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello Teams Page');
   }
 
-  itemTapped() {
-    this.navCtrl.push(TeamDetail)
+  itemTapped($event, team) {
+    this.navCtrl.push(TeamDetail, team)
   }
 }
