@@ -5,6 +5,8 @@ import {Game,TournamentsPage,MyTeamsPage,TeamDetail, Teams} from "../pages/pages
 import {TeamHome} from "../pages/team-home/team-home.page";
 import {Standings} from "../pages/standings/standings.page";
 // import {enableProdMode} from "@angular/core";
+import { ManagerApi } from './shared/shared'
+import {HttpModule} from "@angular/http";
 
 // enableProdMode()
 
@@ -21,7 +23,8 @@ import {Standings} from "../pages/standings/standings.page";
 
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
 
   bootstrap: [IonicApp],
@@ -36,6 +39,9 @@ import {Standings} from "../pages/standings/standings.page";
     Standings
 
   ],
-  providers: []
+  providers: [
+    ManagerApi,
+    HttpModule
+  ]
 })
 export class AppModule {}
