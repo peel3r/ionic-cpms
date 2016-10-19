@@ -1,24 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { TeamHome } from '../pages';
+import { ManagerApi } from '../../app/shared/manager-api.service'
 
 @Component({
   templateUrl: 'teams.page.html',
 })
 export class Teams {
+  diary = [];
+  constructor(private nav: NavController, private navParams: NavParams, private managerApi: ManagerApi) {
 
-  teams = [
-    { id: 1, name: 'HC Elite' },
-    { id: 2, name: 'Team Takeover' },
-    { id: 3, name: 'DC Thunder' }
-  ];
+    let selectedDiary = this.navParams.data;
 
-  constructor(private nav: NavController) {
-
+    this.managerApi.getDiaryData(selectedDiary._id).subscribe(data => {
+      console.log('**data',data)
+      this.diary = data;
+    })
   }
 
-  itemTapped($event, team){
-    this.nav.push(TeamHome, team);
+  itemTapped($event, diary){
+    this.nav.push(TeamHome, diary);
   }
 }

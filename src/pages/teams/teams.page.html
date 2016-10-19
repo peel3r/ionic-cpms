@@ -5,8 +5,8 @@
 </ion-header>
 
 <ion-content>
-    <button ion-item *ngFor="let team of teams" (click)="itemTapped($event, team)">
-        {{team.name}}
+    <button ion-item  (click)="itemTapped($event, diary)">
+        {{diary.title}}
     </button>
 
 </ion-content>
