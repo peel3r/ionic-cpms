@@ -1,17 +1,14 @@
 
 <ion-header>
-
   <ion-navbar color="primary">
     <ion-title>Select a Tournament</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <ion-list>
     <button ion-item *ngFor="let diary of diaries" (click)="itemTapped($event, diary)">
-{{diaries}}    </button>
-
+      {{diary.title}}
+    </button>
   </ion-list>
 </ion-content>
