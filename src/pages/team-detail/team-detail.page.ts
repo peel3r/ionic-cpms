@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {NavParams} from "ionic-angular";
+import * as _ from 'lodash'
+// onPageLoaded renamed to ionViewLoaded
+// onPageWillEnter renamed to ionViewWillEnter
+// onPageDidEnter renamed to ionViewDidEnter
+// onPageWillLeave renamed to ionViewWillLeave
+// onPageDidLeave renamed to ionViewDidLeave
+// onPageWillUnload renamed to ionViewWillUnload
+// onPageDidUnload renamed to ionViewDidUnload
 
-/*
-  Generated class for the TeamDetail page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-team-detail',
   templateUrl: 'team-detail.page.html'
@@ -20,7 +22,6 @@ export class TeamDetail {
   }
 
   ionViewDidLoad() {
-    console.log('Hello TeamDetail Page');
+    this.team = this.navParams.data
   }
-
-}
+  }
