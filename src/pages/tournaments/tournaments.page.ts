@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { LoadingController, NavController } from 'ionic-angular';
 import { Teams } from "../pages";
 import { ManagerApi } from '../../app/shared/shared'
 @Component({
@@ -8,11 +8,24 @@ import { ManagerApi } from '../../app/shared/shared'
 })
 export class TournamentsPage {
   diaries: any;
-  constructor(public navCtrl: NavController, private managerApi: ManagerApi) {}
+  constructor(public navCtrl: NavController,
+              private managerApi: ManagerApi,
+              private loadingController: LoadingController
+  ) {}
 
   ionViewDidLoad() {
-    console.log('Hello Tournaments Page');
-    this.managerApi.getDiaries().then(data => this.diaries = data)
+    let loader = this.loadingController.create({
+      content: 'getting data'
+    })
+
+    loader.present().then(() => {
+      console.log('Hello Tournaments Page');
+      this.managerApi.getDiaries().then(data => {
+        this.diaries = data;
+        loader.dismiss();
+      })
+    })
+
 
   }
 
