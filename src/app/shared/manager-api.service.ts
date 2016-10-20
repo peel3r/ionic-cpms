@@ -19,7 +19,6 @@ export class ManagerApi {
     })
   }
   getDiaryData(diaryId) : Observable<any>  {
-    console.log('***diaryId', diaryId)
     return this.http.get(`${this.baseUrl}/diaries/${diaryId}`)
       .map((response: Response) => {
         this.currentDiary = response.json();
